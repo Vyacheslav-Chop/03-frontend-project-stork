@@ -5,13 +5,18 @@ import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import SideBar from '@/components/SideBar/SideBar';
 // import AuthProvider from '@/components/AuthProvider/AuthProvider';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
-import { Roboto } from 'next/font/google';
+import { Lato, Comfortaa } from 'next/font/google';
 
-const roboto = Roboto({
+const lato = Lato({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-roboto',
-  display: 'swap',
+  weight: ['100', '300', '400', '700', '900'],
+  variable: '--font-lato',
+});
+
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-comfortaa',
 });
 
 export const metadata: Metadata = {
@@ -33,8 +38,8 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html lang="ua">
-      <body className={roboto.variable}>
+    <html lang="uk">
+      <body className={`${lato.variable} ${comfortaa.variable}`}>
         <TanStackProvider>
           {/* <AuthProvider> */}
           <Header />
