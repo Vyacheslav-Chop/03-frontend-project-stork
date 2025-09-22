@@ -1,3 +1,4 @@
+
 import GreetingBlock from '@/components/GreetingBlock/GreetingBlock';
 import StatusBlock from '@/components/StatusBlock/StatusBlock';
 import css from '../page.module.css';
@@ -24,3 +25,10 @@ export const myDayPage = () => {
     </div >
   )
 }
+
+export default function Home() {
+  return (
+    <div>Home</div>
+  );
+}
+
