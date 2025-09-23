@@ -1,0 +1,496 @@
+:root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  /* RGB versions for opacity control */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  /* Background color tokens (Light Mode) */
+  --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
+  --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
+  --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
+  --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
+  --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
+  --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
+  --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
+  --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
+
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  /* Common style patterns */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  /* RGB versions for opacity control */
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+
+  /* Typography */
+  --font-family-base:
+    'FKGroteskNeue', 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  --font-family-mono:
+    'Berkeley Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+.tasksReminderCard {
+  width: 390px;
+  height: 498px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  padding: var(--space-24);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.tasksReminderCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.header {
+  margin-bottom: var(--space-16);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.addButton {
+  position: absolute;
+  top: var(--space-24);
+  right: var(--space-24);
+  width: var(--space-32);
+  height: var(--space-32);
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  transition: background-color var(--duration-normal) var(--ease-standard);
+}
+
+.addButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.addButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.tasksList {
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  padding-right: var(--space-8);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--space-20);
+  color: var(--color-text-secondary);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-24) var(--space-20);
+  color: var(--color-text-secondary);
+}
+
+.emptyText {
+  margin: 0 0 var(--space-8) 0;
+}
+
+.createFirstButton {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-10) var(--space-24);
+  width: 191px;
+  height: 46px;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  box-sizing: border-box;
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: var(--shadow-inset-sm);
+}
+
+.createFirstButton:hover {
+  background: var(--color-secondary-hover);
+}
+
+.createFirstButton:active {
+  background: var(--color-secondary-active);
+}
+
+.createFirstButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-16);
+  padding: var(--space-8) 0;
+}
+
+.taskItem:last-child {
+  margin-bottom: 0;
+}
+
+.checkbox {
+  width: var(--space-20);
+  height: var(--space-20);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-12);
+  flex-shrink: 0;
+  transition: background-color var(--duration-normal) var(--ease-standard);
+  background: transparent;
+}
+
+.checkbox.completed {
+  background: var(--color-primary);
+}
+
+.checkbox:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.taskText {
+  flex: 1;
+  word-break: break-word;
+  color: var(--color-text);
+}
+
+.taskText.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: var(--color-text-secondary);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  width: 300px;
+  max-width: 90vw;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-card-border);
+}
+
+.modalTitle {
+  margin: 0 0 var(--space-16) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-16);
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-8);
+}
+
+.cancelButton {
+  padding: var(--space-8) var(--space-16);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.cancelButton:hover {
+  background: var(--color-secondary);
+}
+
+.cancelButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.confirmButton {
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  border: none;
+  border-radius: var(--radius-base);
+  padding: var(--space-10) var(--space-24);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--duration-normal) var(--ease-standard);
+  min-width: 80px;
+}
+
+.confirmButton:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.confirmButton:active:not(:disabled) {
+  background: var(--color-primary-active);
+}
+
+.confirmButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.confirmButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Стилі для скролбару */
+.tasksList::-webkit-scrollbar {
+  width: var(--space-6);
+}
+
+.tasksList::-webkit-scrollbar-track {
+  background: rgba(var(--color-primary-hover, 45, 166, 178), 0.1);
+  border-radius: var(--space-2);
+}
+
+.tasksList::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-primary-hover, 45, 166, 178), 0.3);
+  border-radius: var(--space-2);
+}
+
+.tasksList::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--color-primary-hover, 45, 166, 178), 0.5);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 480px) {
+  .tasksReminderCard {
+    width: 100%;
+    max-width: calc(100vw - var(--space-32));
+    height: auto;
+    min-height: 400px;
+    padding: var(--space-16);
+  }
+
+  .addButton {
+    top: var(--space-16);
+    right: var(--space-16);
+    width: 28px;
+    height: 28px;
+    font-size: var(--font-size-lg);
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-6);
+  }
+
+  .tasksList {
+    height: auto;
+    max-height: 300px;
+    padding-right: var(--space-4);
+  }
+
+  .emptyState {
+    padding: var(--space-16) var(--space-12);
+  }
+
+  .createFirstButton {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .taskItem {
+    margin-bottom: var(--space-12);
+    padding: var(--space-6) 0;
+  }
+
+  .modalContent {
+    width: calc(100vw - var(--space-32));
+    max-width: 280px;
+    padding: var(--space-20);
+  }
+
+  .modalTitle {
+    font-size: var(--font-size-base);
+  }
+
+  .modalActions {
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .confirmButton,
+  .cancelButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
