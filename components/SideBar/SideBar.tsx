@@ -4,7 +4,7 @@ import Link from 'next/link';
 import css from './SideBar.module.css';
 import NavSideBar from '../NavSideBar/NavSideBar';
 import { logout } from '@/lib/api/apiClient';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface SidebarProps {
   onClose: () => void;

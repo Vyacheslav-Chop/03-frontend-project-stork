@@ -12,7 +12,7 @@ const NavSideBar = ({ isAuth }: NavSidebarProps) => {
         <li>
           <Link href={isAuth ? '/' : '/sign-up'} className={css.navItem}>
             <svg width={24} height={24}>
-              <use href="/icons/sideBar/myDay.svg#myDay"></use>
+              <use href="/icons/sideBar/myDay.svg#icon-myDay"></use>
             </svg>
             Мій день
           </Link>
