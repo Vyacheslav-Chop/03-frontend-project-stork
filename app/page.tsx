@@ -1,34 +1,31 @@
-
+import css from './page.module.css';
 import GreetingBlock from '@/components/GreetingBlock/GreetingBlock';
 import StatusBlock from '@/components/StatusBlock/StatusBlock';
-import css from '../page.module.css';
 import BabyTodayCard from '@/components/BabyTodayCard/BabyTodayCard';
 import MomTipCard from '@/components/MomTipCard/MomTipCard';
 import TasksReminderCard from '@/components/TasksReminderCard/TasksReminderCard';
 import FeelingCheckCard from '@/components/FeelingCheckCard/FeelingCheckCard';
+import { fetchBabyData } from '@/lib/api/apiServer';
+import { BabyWeekData } from '@/types/babyWeekData';
 
-export const myDayPage = () => {
+export default async function Page() {
+  const currentWeek = 14;
+  const babyData: BabyWeekData = await fetchBabyData(currentWeek);
+
   return (
     <div className={css.mainWrapper}>
       <GreetingBlock />
-      <div>
-        <div>
+      <div className={css.innerWrapper}>
+        <div className={css.firstWrapper}>
           <StatusBlock />
-          <BabyTodayCard />
+          <BabyTodayCard data={babyData} />
           <MomTipCard />
         </div>
-        <div>
+        <div className={css.lastWrapper}>
           <TasksReminderCard />
           <FeelingCheckCard />
         </div>
       </div>
-    </div >
-  )
-}
-
-export default function Home() {
-  return (
-    <div>Home</div>
+    </div>
   );
 }
-

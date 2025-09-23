@@ -9,6 +9,11 @@
     flex-direction: column;
     gap: 16px;
 }
+.firstWrapper {
+   display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 .lastWrapper {
     display: flex;
