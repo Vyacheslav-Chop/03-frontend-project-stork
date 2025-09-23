@@ -12,3 +12,9 @@ export const checkSession = async () => {
 
   return res;
 };
+
+
+export async function logout(): Promise<void> {
+  await nextServer.post('/auth/logout');
+}
+
