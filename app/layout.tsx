@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header/Header';
-import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
+// import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 // import AuthProvider from '@/components/AuthProvider/AuthProvider';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 import { Lato, Comfortaa } from 'next/font/google';
@@ -44,7 +44,7 @@ export default function RootLayout({
         <TanStackProvider>
           {/* <AuthProvider> */}
           <Header />
-          <Breadcrumbs />
+          {/* <Breadcrumbs /> */}
           <aside>{sidebar}</aside>
 
           <main>{children}</main>

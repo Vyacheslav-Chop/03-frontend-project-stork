@@ -18,16 +18,13 @@ export async function GET(request: NextRequest) {
     if (setCookie) {
       const cookieArray = Array.isArray(setCookie) ? setCookie : [setCookie];
       let refreshToken = '';
-      let sessionId = '';
 
       for (const cookieStr of cookieArray) {
         const parsed = parse(cookieStr);
-        if (parsed.sessionId) sessionId = parsed.sessionId;
         if (parsed.refreshToken) refreshToken = parsed.refreshToken;
       }
 
       if (refreshToken) cookieStore.set('refreshToken', refreshToken);
-      if (sessionId) cookieStore.set('sessionId', sessionId);
 
       return NextResponse.redirect(new URL(next, request.url), {
         headers: {
