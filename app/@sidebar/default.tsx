@@ -1,12 +1,9 @@
-export default function SidebarPage() {
-  return (
-    <nav>
-      <ul>
-        <li>Лелека</li>
-        <li>Мій день</li>
-        <li>Подорож</li>
-        <li>Щоденник</li>
-      </ul>
-    </nav>
-  );
+import SideBar from '@/components/SideBar/SideBar';
+
+interface SidebarProps {
+  onClose: () => void;
+}
+
+export default function SidebarPage({ onClose }: SidebarProps) {
+  return <SideBar onClose={onClose} />;
 }
