@@ -24,7 +24,7 @@ export default async function Page() {
           <MomTipCard data={babyData} />
         </div>
         <div className={css.lastWrapper}>
-          <TasksReminderCard />
+          <TasksReminderCard data={tasks} />
           <FeelingCheckCard />
         </div>
       </div>
