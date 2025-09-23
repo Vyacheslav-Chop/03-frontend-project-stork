@@ -1,265 +1,139 @@
-:root {
-  /* Primitive Color Tokens */
-  --color-white: rgba(255, 255, 255, 1);
-  --color-black: rgba(0, 0, 0, 1);
-  --color-cream-50: rgba(252, 252, 249, 1);
-  --color-cream-100: rgba(255, 255, 253, 1);
-  --color-gray-200: rgba(245, 245, 245, 1);
-  --color-gray-300: rgba(167, 169, 169, 1);
-  --color-gray-400: rgba(119, 124, 124, 1);
-  --color-slate-500: rgba(98, 108, 113, 1);
-  --color-brown-600: rgba(94, 82, 64, 1);
-  --color-charcoal-700: rgba(31, 33, 33, 1);
-  --color-charcoal-800: rgba(38, 40, 40, 1);
-  --color-slate-900: rgba(19, 52, 59, 1);
-  --color-teal-300: rgba(50, 184, 198, 1);
-  --color-teal-400: rgba(45, 166, 178, 1);
-  --color-teal-500: rgba(33, 128, 141, 1);
-  --color-teal-600: rgba(29, 116, 128, 1);
-  --color-teal-700: rgba(26, 104, 115, 1);
-  --color-teal-800: rgba(41, 150, 161, 1);
-  --color-red-400: rgba(255, 84, 89, 1);
-  --color-red-500: rgba(192, 21, 47, 1);
-  --color-orange-400: rgba(230, 129, 97, 1);
-  --color-orange-500: rgba(168, 75, 47, 1);
-
-  /* RGB versions for opacity control */
-  --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
-  --color-slate-500-rgb: 98, 108, 113;
-  --color-red-500-rgb: 192, 21, 47;
-  --color-red-400-rgb: 255, 84, 89;
-  --color-orange-500-rgb: 168, 75, 47;
-  --color-orange-400-rgb: 230, 129, 97;
-
-  /* Background color tokens (Light Mode) */
-  --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
-  --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
-  --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
-  --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
-  --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
-  --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
-  --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
-  --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
-
-  /* Semantic Color Tokens (Light Mode) */
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-teal-500);
-  --color-primary-hover: var(--color-teal-600);
-  --color-primary-active: var(--color-teal-700);
-  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-error: var(--color-red-500);
-  --color-success: var(--color-teal-500);
-  --color-warning: var(--color-orange-500);
-  --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
-
-  /* Common style patterns */
-  --focus-ring: 0 0 0 3px var(--color-focus-ring);
-  --focus-outline: 2px solid var(--color-primary);
-  --status-bg-opacity: 0.15;
-  --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-  /* RGB versions for opacity control */
-  --color-success-rgb: 33, 128, 141;
-  --color-error-rgb: 192, 21, 47;
-  --color-warning-rgb: 168, 75, 47;
-  --color-info-rgb: 98, 108, 113;
-
-  /* Typography */
-  --font-family-base:
-    'FKGroteskNeue', 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    sans-serif;
-  --font-family-mono:
-    'Berkeley Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-size-xs: 11px;
-  --font-size-sm: 12px;
-  --font-size-base: 14px;
-  --font-size-md: 14px;
-  --font-size-lg: 16px;
-  --font-size-xl: 18px;
-  --font-size-2xl: 20px;
-  --font-size-3xl: 24px;
-  --font-size-4xl: 30px;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 550;
-  --font-weight-bold: 600;
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --letter-spacing-tight: -0.01em;
-
-  /* Spacing */
-  --space-0: 0;
-  --space-1: 1px;
-  --space-2: 2px;
-  --space-4: 4px;
-  --space-6: 6px;
-  --space-8: 8px;
-  --space-10: 10px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-20: 20px;
-  --space-24: 24px;
-  --space-32: 32px;
-
-  /* Border Radius */
-  --radius-sm: 6px;
-  --radius-base: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
-
-  /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-
-  /* Animation */
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-
-  /* Layout */
-  --container-sm: 640px;
-  --container-md: 768px;
-  --container-lg: 1024px;
-  --container-xl: 1280px;
-}
-
 .tasksReminderCard {
   width: 390px;
   height: 498px;
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-card-border);
-  padding: var(--space-24);
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-  color: var(--color-text);
+  background: #fefbf4;
+  border-radius: 12px;
+  border: 1px solid rgba(94, 82, 64, 0.12);
+  padding: 24px;
+  font-family:
+    'FKGroteskNeue',
+    'Geist',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(19, 52, 59, 1);
   position: relative;
   box-sizing: border-box;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--duration-normal) var(--ease-standard);
-}
-
-.tasksReminderCard:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 .header {
-  margin-bottom: var(--space-16);
+  margin-bottom: 16px;
 }
 
 .title {
   margin: 0;
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-8);
-  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 550;
+  margin-bottom: 8px;
+  color: rgba(19, 52, 59, 1);
 }
 
 .addButton {
   position: absolute;
-  top: var(--space-24);
-  right: var(--space-24);
-  width: var(--space-32);
-  height: var(--space-32);
-  border-radius: var(--radius-full);
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
   border: none;
-  background: var(--color-primary);
-  color: var(--color-btn-primary-text);
+  background: rgb(0, 0, 0);
+  color: rgba(252, 252, 249, 1);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-xl);
-  transition: background-color var(--duration-normal) var(--ease-standard);
+  font-size: 18px;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .addButton:hover {
-  background: var(--color-primary-hover);
+  background: rgba(29, 116, 128, 1);
 }
 
 .addButton:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.4);
 }
 
 .tasksList {
   height: calc(100% - 60px);
   overflow-y: auto;
-  padding-right: var(--space-8);
+  padding-right: 8px;
 }
 
 .loading {
   text-align: center;
-  padding: var(--space-20);
-  color: var(--color-text-secondary);
+  padding: 20px;
+  color: rgba(98, 108, 113, 1);
 }
 
 .emptyState {
-  text-align: center;
-  padding: var(--space-24) var(--space-20);
-  color: var(--color-text-secondary);
+  text-align: left;
+  padding: 16px 0px;
+  color: rgba(98, 108, 113, 1);
 }
 
 .emptyText {
-  margin: 0 0 var(--space-8) 0;
+  margin: 0 0 8px 0;
 }
 
 .createFirstButton {
-  background: var(--color-secondary);
-  color: var(--color-text);
+  background: #fef1db;
+  color: rgba(19, 52, 59, 1);
   border: none;
-  border-radius: var(--radius-full);
-  padding: var(--space-10) var(--space-24);
+  border-radius: 9999px;
+  padding: 10px 24px;
   width: 191px;
   height: 46px;
   cursor: pointer;
-  font-size: var(--font-size-base);
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-normal);
+  font-size: 14px;
+  font-family:
+    'FKGroteskNeue',
+    'Geist',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-weight: 400;
+  margin-top: 8px;
   box-sizing: border-box;
-  transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: var(--shadow-inset-sm);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .createFirstButton:hover {
-  background: var(--color-secondary-hover);
+  background: rgba(94, 82, 64, 0.2);
+  transform: translateY(1px);
 }
 
 .createFirstButton:active {
-  background: var(--color-secondary-active);
+  background: rgba(94, 82, 64, 0.25);
+  transform: translateY(2px);
 }
 
 .createFirstButton:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.4);
 }
 
 .taskItem {
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-16);
-  padding: var(--space-8) 0;
+  margin-bottom: 16px;
+  padding: 8px 0;
 }
 
 .taskItem:last-child {
@@ -267,39 +141,37 @@
 }
 
 .checkbox {
-  width: var(--space-20);
-  height: var(--space-20);
-  border-radius: var(--radius-sm);
-  border: 2px solid var(--color-primary);
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid rgba(33, 128, 141, 1);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: var(--space-12);
+  margin-right: 12px;
   flex-shrink: 0;
-  transition: background-color var(--duration-normal) var(--ease-standard);
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
   background: transparent;
 }
 
 .checkbox.completed {
-  background: var(--color-primary);
+  background: rgba(33, 128, 141, 1);
 }
 
 .checkbox:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.4);
 }
 
 .taskText {
   flex: 1;
   word-break: break-word;
-  color: var(--color-text);
 }
 
 .taskText.completed {
   text-decoration: line-through;
   opacity: 0.6;
-  color: var(--color-text-secondary);
 }
 
 .modal {
@@ -308,7 +180,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(19, 52, 59, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,181 +188,213 @@
 }
 
 .modalContent {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-24);
+  background: rgba(255, 255, 253, 1);
+  border-radius: 12px;
+  padding: 24px;
   width: 300px;
   max-width: 90vw;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-card-border);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(94, 82, 64, 0.12);
 }
 
 .modalTitle {
-  margin: 0 0 var(--space-16) 0;
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 550;
+  color: rgba(19, 52, 59, 1);
 }
 
 .input {
   width: 100%;
-  padding: var(--space-12);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-base);
-  margin-bottom: var(--space-16);
+  padding: 12px;
+  border: 1px solid rgba(94, 82, 64, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
   box-sizing: border-box;
-  font-family: var(--font-family-base);
-  background-color: var(--color-surface);
-  color: var(--color-text);
-  transition: border-color var(--duration-fast) var(--ease-standard);
+  font-family:
+    'FKGroteskNeue',
+    'Geist',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  background-color: rgba(255, 255, 253, 1);
+  color: rgba(19, 52, 59, 1);
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: var(--focus-ring);
+  outline: 2px solid var(--color-primary);
+  border-color: rgba(33, 128, 141, 1);
 }
 
 .modalActions {
   display: flex;
   justify-content: flex-end;
-  gap: var(--space-8);
+  gap: 8px;
 }
 
 .cancelButton {
-  padding: var(--space-8) var(--space-16);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  background: var(--color-surface);
-  color: var(--color-text);
+  padding: 8px 16px;
+  border: 1px solid rgba(94, 82, 64, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 253, 1);
+  color: rgba(19, 52, 59, 1);
   cursor: pointer;
-  font-size: var(--font-size-base);
-  font-family: var(--font-family-base);
-  transition: all var(--duration-normal) var(--ease-standard);
+  font-size: 14px;
+  font-family:
+    'FKGroteskNeue',
+    'Geist',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cancelButton:hover {
-  background: var(--color-secondary);
+  background: rgba(94, 82, 64, 0.12);
 }
 
 .cancelButton:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.4);
 }
 
 .confirmButton {
-  background: var(--color-primary);
-  color: var(--color-btn-primary-text);
+  background: rgba(33, 128, 141, 1);
+  color: rgba(252, 252, 249, 1);
   border: none;
-  border-radius: var(--radius-base);
-  padding: var(--space-10) var(--space-24);
+  border-radius: 9999px;
+  padding: 10px 24px;
   cursor: pointer;
-  font-size: var(--font-size-base);
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
-  transition: all var(--duration-normal) var(--ease-standard);
+  font-size: 14px;
+  font-family:
+    'FKGroteskNeue',
+    'Geist',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-weight: 400;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
   min-width: 80px;
 }
 
 .confirmButton:hover:not(:disabled) {
-  background: var(--color-primary-hover);
+  background: rgba(29, 116, 128, 1);
+  transform: translateY(1px);
 }
 
 .confirmButton:active:not(:disabled) {
-  background: var(--color-primary-active);
+  background: rgba(26, 104, 115, 1);
+  transform: translateY(2px);
 }
 
 .confirmButton:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.4);
 }
 
 .confirmButton:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+  transform: none;
 }
 
-/* Стилі для скролбару */
+/* Custom scrollbar styles */
 .tasksList::-webkit-scrollbar {
-  width: var(--space-6);
+  width: 6px;
 }
 
 .tasksList::-webkit-scrollbar-track {
-  background: rgba(var(--color-primary-hover, 45, 166, 178), 0.1);
-  border-radius: var(--space-2);
+  background: rgba(33, 128, 141, 0.1);
+  border-radius: 3px;
 }
 
 .tasksList::-webkit-scrollbar-thumb {
-  background: rgba(var(--color-primary-hover, 45, 166, 178), 0.3);
-  border-radius: var(--space-2);
+  background: rgba(33, 128, 141, 0.3);
+  border-radius: 3px;
 }
 
 .tasksList::-webkit-scrollbar-thumb:hover {
-  background: rgba(var(--color-primary-hover, 45, 166, 178), 0.5);
+  background: rgba(33, 128, 141, 0.5);
 }
 
-/* Mobile responsive styles */
+/* Responsive styles for mobile portrait (480px and below) */
 @media (max-width: 480px) {
   .tasksReminderCard {
     width: 100%;
-    max-width: calc(100vw - var(--space-32));
+    max-width: calc(100vw - 32px);
     height: auto;
     min-height: 400px;
-    padding: var(--space-16);
+    margin: 16px;
+    padding: 16px;
   }
 
   .addButton {
-    top: var(--space-16);
-    right: var(--space-16);
-    width: 28px;
-    height: 28px;
-    font-size: var(--font-size-lg);
+    top: 16px;
+    right: 16px;
   }
 
   .title {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--space-6);
+    font-size: 16px;
+    margin-bottom: 6px;
   }
 
   .tasksList {
     height: auto;
     max-height: 300px;
-    padding-right: var(--space-4);
+    padding-right: 4px;
   }
 
   .emptyState {
-    padding: var(--space-16) var(--space-12);
+    padding: 24px 16px;
   }
 
   .createFirstButton {
     width: 100%;
     max-width: 250px;
-  }
-
-  .taskItem {
-    margin-bottom: var(--space-12);
-    padding: var(--space-6) 0;
+    height: auto;
+    padding: 12px 20px;
   }
 
   .modalContent {
-    width: calc(100vw - var(--space-32));
+    width: calc(100vw - 32px);
     max-width: 280px;
-    padding: var(--space-20);
+    padding: 20px;
   }
 
   .modalTitle {
-    font-size: var(--font-size-base);
+    font-size: 14px;
   }
 
   .modalActions {
-    flex-direction: column;
-    gap: var(--space-8);
+    flex-direction: column-reverse;
+    gap: 8px;
   }
 
-  .confirmButton,
-  .cancelButton {
+  .cancelButton,
+  .confirmButton {
     width: 100%;
-    justify-content: center;
+    padding: 10px 16px;
+  }
+
+  .taskItem {
+    padding: 6px 0;
+    margin-bottom: 12px;
+  }
+
+  .checkbox {
+    margin-right: 8px;
   }
 }
