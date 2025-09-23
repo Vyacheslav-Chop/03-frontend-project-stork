@@ -10,3 +10,9 @@ export interface BabyWeekData {
   interestingFact: string; // интересный факт недели
   momDailyTips: string[]; // массив советов для мамы
 }
+
+export interface BabyWeekDataResponse {
+  data: BabyWeekData;
+  weekNumber: number;
+  daysToBirth: number;
+}

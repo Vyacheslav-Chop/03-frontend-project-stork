@@ -1,0 +1,25 @@
+.statusBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  width: 335px;
+  padding: 16px;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  background: #fff4f6;
+  border: 0px solid FFF4F6;
+  border-radius: 32px;
+  width: 159px;
+  height: 105px;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+}
