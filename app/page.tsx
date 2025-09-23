@@ -5,12 +5,14 @@ import BabyTodayCard from '@/components/BabyTodayCard/BabyTodayCard';
 import MomTipCard from '@/components/MomTipCard/MomTipCard';
 import TasksReminderCard from '@/components/TasksReminderCard/TasksReminderCard';
 import FeelingCheckCard from '@/components/FeelingCheckCard/FeelingCheckCard';
-import { fetchBabyData } from '@/lib/api/apiServer';
+import { fetchBabyData, fetchTasks } from '@/lib/api/apiServer';
 import { BabyWeekData } from '@/types/babyWeekData';
+
 
 export default async function Page() {
   const currentWeek = 14;
   const babyData: BabyWeekData = await fetchBabyData(currentWeek);
+  const tasks = await fetchTasks();
 
   return (
     <div className={css.mainWrapper}>
@@ -19,7 +21,7 @@ export default async function Page() {
         <div className={css.firstWrapper}>
           <StatusBlock />
           <BabyTodayCard data={babyData} />
-          <MomTipCard />
+          <MomTipCard data={babyData} />
         </div>
         <div className={css.lastWrapper}>
           <TasksReminderCard />
