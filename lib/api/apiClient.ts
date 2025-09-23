@@ -7,13 +7,6 @@ export const getUser = async (): Promise<ApiResponse> => {
   return res.data;
 };
 
-export const checkSession = async () => {
-  const res = await nextServer.get('/auth/session');
-
-  return res;
-};
-
-
 export async function logout(): Promise<void> {
   await nextServer.post('/auth/logout');
 }

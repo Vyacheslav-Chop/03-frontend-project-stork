@@ -20,7 +20,6 @@ export async function POST(req: NextRequest) {
         maxAge: Number(parsed['Max-Age']),
       };
       if (parsed.refreshToken) cookieStore.set('refreshToken', parsed.refreshToken, options);
-      if (parsed.sessionId) cookieStore.set('sessionId', parsed.sessionId, options);
     }
 
     return NextResponse.json(apiRes.data);
