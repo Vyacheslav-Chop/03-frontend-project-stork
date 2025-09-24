@@ -12,9 +12,9 @@ const DIARY_ALIASES = ["diary"];
 const LABELS: Record<string, string> = {
   "": "Лелека",
   "my-day": "Мій день",
-  diary: "Щоденник",
-  journey: "Подорож",
-  profile: "Профіль",
+  "diary": "Щоденник",
+  "journey": "Подорож",
+  "profile": "Профіль",
 };
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "";
