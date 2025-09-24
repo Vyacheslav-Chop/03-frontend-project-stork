@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.89.0",
+    "@tanstack/react-query": "^5.90.1",
     "axios": "^1.12.2",
     "cookie": "^1.0.2",
     "modern-normalize": "^3.0.1",
